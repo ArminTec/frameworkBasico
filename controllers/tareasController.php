@@ -1,14 +1,20 @@
 <?php
+
 class tareasController extends AppController
 
 {
-
+    /**
+     * [__construct description]
+     */
     public function __construct(){
 
     parent::__construct();
 
     }
-
+/**
+ * [index description]
+ * @return [type] [description]
+ */
     public function index(){
 
     $tareas = $this->loadModel("tarea");
@@ -20,7 +26,10 @@ class tareasController extends AppController
     $this->_view->renderizar("index");
 
     }
-
+/**
+ * [agregar description]
+ * @return [type] [description]
+ */
     public function agregar(){
         if ($_POST) {
             $tareas = $this->loadModel("tarea");
@@ -40,7 +49,11 @@ class tareasController extends AppController
         $this->_view->titulo="Agregar tarea";
         $this->_view->renderizar("agregar");
     }
-
+/**
+ * [editar description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
     public function editar($id=null){
         if ($_POST) {
             $tarea = $this->loadModel("tarea");
@@ -70,7 +83,11 @@ class tareasController extends AppController
         $this->_view->titulo="Editar tarea";
         $this->_view->renderizar("editar");
     }
-    
+  /**
+   * [eliminar description]
+   * @param  [type] $id [description]
+   * @return [type]     [description]
+   */
     public function eliminar($id){
         $tarea = $this->loadModel("tarea");
         $registro = $tarea->buscarPorId($id);
@@ -83,7 +100,12 @@ class tareasController extends AppController
                 );
         }
     }
-
+/**
+ * [cambiarEstado description]
+ * @param  [type] $id     [description]
+ * @param  [type] $status [description]
+ * @return [type]         [description]
+ */
     public function cambiarEstado($id, $status){
         $tarea = $this->loadModel("tarea");
         if ($status=="off") {

@@ -1,6 +1,11 @@
 <?php
 class Bootstrap
 {
+/**
+ * [run description]
+ * @param  Request $peticion [description]
+ * @return [type]            [description]
+ */
 	public static function run(Request $peticion){
 		$controller = $peticion->getControlador()."Controller";
 		$rutaControlador = ROOT."controllers".DS.$controller.".php";

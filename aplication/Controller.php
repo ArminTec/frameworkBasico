@@ -1,4 +1,5 @@
 <?php
+
 abstract class AppController {
     protected $_view;
     protected $_messages;
@@ -7,9 +8,16 @@ abstract class AppController {
     $this->_messages = new \Plasticbrain\FlashMessages\FlashMessages();
 }
     
-    
+/**
+ * [index description]
+ * @return [type] [description]
+ */
     abstract function index();
-
+/**
+ * [loadModel description]
+ * @param  [type] $modelo [description]
+ * @return [type]         [description]
+ */
     protected function loadModel($modelo){
 
         $modelo = $modelo."Model";
@@ -30,6 +38,12 @@ abstract class AppController {
         }
     
     }
+
+/**
+ * [redirect description]
+ * @param  array  $url [description]
+ * @return [type]      [description]
+ */
     public function redirect($url = array()){
         $path = "";
         if ($url["controller"]) {

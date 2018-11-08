@@ -4,7 +4,10 @@ class View{
 
     private $_controlador;
     private $_msg;
-
+/**
+ * [__construct description]
+ * @param Request $peticion [description]
+ */
     public function __construct(Request $peticion){
 
     $this->_controlador = $peticion->getControlador();
@@ -12,6 +15,12 @@ class View{
 
 }
 
+/**
+ * [renderizar description]
+ * @param  [type]  $vista [description]
+ * @param  boolean $item  [description]
+ * @return [type]         [description]
+ */
 public function renderizar($vista, $item = false){
 
 $_layoutParams = array(

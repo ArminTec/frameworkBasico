@@ -3,12 +3,18 @@ class categoriasController extends AppController
 
 {
 
+/**
+ * [__construct description]
+ */
     public function __construct(){
 
     parent::__construct();
 
     }
-
+/**
+ * [index description]
+ * @return [type] [description]
+ */
     public function index(){
 
     $categorias = $this->loadModel("categoria");
@@ -20,7 +26,10 @@ class categoriasController extends AppController
     $this->_view->renderizar("index");
 
     }
-
+/**
+ * [agregar description]
+ * @return [type] [description]
+ */
     public function agregar(){
         if ($_POST) {
             $categorias = $this->loadModel("categoria");
@@ -38,7 +47,11 @@ class categoriasController extends AppController
         $this->_view->titulo="Agregar categoría";
         $this->_view->renderizar("agregar");
     }
-
+/**
+ * [editar description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
     public function editar($id=null){
         if ($_POST) {
             $categoria = $this->loadModel("categoria");
@@ -69,7 +82,11 @@ class categoriasController extends AppController
         $this->_view->titulo="Editar categoría";
         $this->_view->renderizar("editar");
     }
-    
+ /**
+  * [eliminar description]
+  * @param  [type] $id [description]
+  * @return [type]     [description]
+  */
     public function eliminar($id){
         $categoria = $this->loadModel("categoria");
         $registro = $categoria->buscarPorId($id);

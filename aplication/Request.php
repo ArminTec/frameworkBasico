@@ -4,7 +4,9 @@ class Request{
     private $_controlador;
     private $_metodo;
     private $_argumentos;
-
+/**
+ * [__construct description]
+ */
     public function __construct(){
         if (isset($_GET['url'])) {
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
@@ -27,15 +29,24 @@ class Request{
        }
 
     }
-
+/**
+ * [getControlador description]
+ * @return [type] [description]
+ */
     public function getControlador(){
 		return $this->_controlador;
 	}
-
+/**
+ * [getMetodo description]
+ * @return [type] [description]
+ */
 	public function getMetodo(){
 		return $this->_metodo;
 	}
-
+/**
+ * [getArgs description]
+ * @return [type] [description]
+ */
 	public function getArgs(){
 		return $this->_argumentos;
 	}
